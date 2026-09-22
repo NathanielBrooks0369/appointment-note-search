@@ -1,0 +1,8 @@
+[project]
+name = "appointment-note-search"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["openai>=1.0", "pytest>=7.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
