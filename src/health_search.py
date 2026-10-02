@@ -131,6 +131,7 @@ def main() -> None:
     embedder = OpenAIEmbeddings()
     with open(args.pdf, "rb") as handle:
         request = SearchRequest(handle.read(), args.question, args.patient_name)
+    index_scan(client, embedder, request.pdf, os.path.basename(args.pdf))
     result = answer_question(request, client, embedder)
     print(json.dumps({"status": result.status, "message": result.message, "evidence": result.evidence}, indent=2))
 
